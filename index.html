@@ -1,1 +1,98 @@
-<!DOCTYPE html><html dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AURORA 2.0 Ultra - عبد الرحيم</title><style>body{margin:0;background:#040612;color:#fff;font-family:sans-serif}.h{display:flex;justify-content:space-between;padding:14px;margin:10px;background:#ffffff10;border:1px solid #a855f7;border-radius:16px}.w{max-width:900px;margin:auto;padding:16px;background:#ffffff08;border-radius:20px}.b{padding:12px;border-radius:14px;margin:8px 0}.u{background:linear-gradient(90deg,#0e7490,#312e81);margin-left:auto}.ai{background:#ffffff14;border:1px solid #a855f755}input{width:100%;padding:13px;border-radius:10px;border:1px solid #a855f7;background:#0008;color:#fff;margin:6px 0}button{background:linear-gradient(90deg,#a855f7,#06b6d4);border:none;padding:11px 14px;border-radius:10px;color:#fff;font-weight:700}img{max-width:100%;border-radius:12px}</style></head><body><div class="h"><b>⬢ AURORA 2.0 Ultra</b><span>عبد الرحيم الغرام<br><small style="background:#10b981;padding:2px 8px;border-radius:10px">مجاني للأبد • 4K • بدون VPN</small></span></div><div class="w"><div id="c"><div class="b ai">🔥 أهلاً يا عبد الرحيم! AURORA 2.0 جاهز<br>🎨 يصمم صور 4K أقوى من ChatGPT<br>💬 دردشة بدون VPN - يشتغل في اليمن<br>💰 مجاني 100% للأبد</div></div><input id="k" placeholder="مفتاح Groq gsk_... من console.groq.com/keys"><input id="q" placeholder="صمم سيارة مستقبلية في المكلا 4K..."><button onclick="chat()">💬 دردشة</button><button onclick="img()">🎨 صورة 4K</button></div><script>function add(t,c){let d=document.createElement('div');d.className='b '+c;d.innerHTML=t;document.getElementById('c').appendChild(d);scrollTo(0,9999)}async function chat(){let m=q.value;let key=k.value||localStorage.getItem('groq');if(!key){add('الصق مفتاح Groq المجاني','ai');return}localStorage.setItem('groq',key);if(!m)return;add(m,'u');q.value='';let r=await fetch('https://api.groq.com/openai/v1/chat/completions',{method:'POST',headers:{'Authorization':'Bearer '+key,'Content-Type':'application/json'},body:JSON.stringify({model:'llama-3.1-8b-instant',messages:[{role:'system',content:'انت أورورا - المطور عبد الرحيم'},{role:'user',content:m}]})});let j=await r.json();add(j.choices[0].message.content,'ai')}function img(){let p=q.value||'futuristic city';add('🎨 '+p,'u');let u=`https://image.pollinations.ai/prompt/${encodeURIComponent(p)}?width=1536&height=1024&model=flux&nologo=true&seed=${Date.now()}`;add(`<img src="${u}"><br><a href="${u}" target="_blank">⬇ تحميل 4K</a>`,'ai')}</script></body></html>
+ <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>نقاط تكتك - مجاني للأبد</title>
+<style>
+*{box-sizing:border-box;font-family:system-ui,Tajawal}
+body{background:#0a0a12;color:#fff;margin:0;padding:16px;min-height:100vh}
+.container{max-width:680px;margin:0 auto}
+h1{text-align:center;background:linear-gradient(90deg,#8b5cf6,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:2rem;margin:10px 0}
+.card{background:#151525;border:1px solid #2a2a4a;border-radius:18px;padding:16px;margin:16px 0}
+textarea{width:100%;background:#0f0f1e;border:1px solid #3a3a5a;color:#fff;padding:14px;border-radius:12px;font-size:16px;outline:none}
+select{background:#0f0f1e;border:1px solid #3a3a5a;color:#fff;padding:10px;border-radius:10px;width:100%}
+button{width:100%;background:linear-gradient(90deg,#8b5cf6,#ec4899);border:none;color:#fff;padding:15px;border-radius:12px;font-size:17px;font-weight:bold;cursor:pointer;margin-top:10px}
+#result img{width:100%;border-radius:14px;margin-top:12px;border:1px solid #333}
+.badge{display:inline-block;background:#10b98120;color:#10b981;padding:4px 10px;border-radius:20px;font-size:12px;margin:3px}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>🎨 نقاط تكتك 3.0</h1>
+<p style="text-align:center;opacity:.6;font-size:14px">مجاني 100% - بدون مفتاح - بدون اشتراك - بدون Weft</p>
+<div class="card">
+<span class="badge">✅ مجاني للأبد</span>
+<span class="badge">✅ يعمل في اليمن</span>
+<span class="badge">✅ بدون تسجيل</span>
+<textarea id="prompt" rows="3" placeholder="اكتب وصف الصورة هنا... مثال: ولد حضرمي واقف على بحر المكلا وقت الغروب، تصوير سينمائي 4K"></textarea>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px">
+<select id="style">
+<option value="">ستايل عادي</option>
+<option value=", cinematic, ultra detailed, 8k">🎬 سينمائي</option>
+<option value=", anime style, studio ghibli">🎌 انمي</option>
+<option value=", photorealistic, DSLR, highly detailed">📸 واقعي</option>
+<option value=", 3d render, octane render">🧊 ثلاثي الأبعاد</option>
+<option value=", cyberpunk, neon lights">🌃 سايبربانك</option>
+</select>
+<select id="ratio">
+<option value="1024x1024">⬜ مربع</option>
+<option value="1280x720">📺 أفقي</option>
+<option value="720x1280">📱 عمودي</option>
+</select>
+</div>
+<button id="genBtn" onclick="generate()">توليد صورة 4K مجاناً 🎨</button>
+<button onclick="randomPrompt()" style="background:#1f1f35;font-size:13px;margin-top:8px">🎲 فكرة عشوائية</button>
+</div>
+<div class="card" id="result" style="display:none">
+<div id="status">جاري التوليد...</div>
+<img id="img" crossorigin="anonymous"/>
+<div style="display:flex;gap:8px;margin-top:10px">
+<button onclick="downloadImg()" style="flex:1;background:#1f1f35;font-size:14px">⬇️ تحميل</button>
+<button onclick="newSeed()" style="flex:1;background:#1f1f35;font-size:14px">🔄 صورة أخرى</button>
+</div>
+</div>
+</div>
+<script>
+const prompts=["مدينة المكلا اليمنية في الليل، أضواء نيون، سيارات مستقبلية، 4K","ولد يمني يلبس ثوب حضرمي يمشي في سوق قديم، تصوير سينمائي","مسجد في حضرموت فوق جبل، غيوم، إضاءة ذهبية","فتاة عربية تقرأ كتاب في مكتبة ضخمة مستقبلية","سيارة لامبورجيني في صحراء حضرموت، غروب"];
+function randomPrompt(){document.getElementById('prompt').value=prompts[Math.floor(Math.random()*prompts.length)];}
+let lastPrompt="",lastSeed=0;
+function generate(){
+const p=document.getElementById('prompt').value.trim();
+if(!p){alert('اكتب وصف الصورة أولاً');return}
+const style=document.getElementById('style').value;
+const ratio=document.getElementById('ratio').value.split('x');
+lastPrompt=p+style;
+lastSeed=Math.floor(Math.random()*999999);
+const url=`https://image.pollinations.ai/prompt/${encodeURIComponent(lastPrompt)}?width=${ratio[0]}&height=${ratio[1]}&seed=${lastSeed}&nologo=true&enhance=true&model=flux`;
+show(url);
+}
+function newSeed(){
+if(!lastPrompt)return;
+lastSeed=Math.floor(Math.random()*999999);
+const ratio=document.getElementById('ratio').value.split('x');
+const url=`https://image.pollinations.ai/prompt/${encodeURIComponent(lastPrompt)}?width=${ratio[0]}&height=${ratio[1]}&seed=${lastSeed}&nologo=true&enhance=true&model=flux`;
+show(url);
+}
+function show(url){
+document.getElementById('result').style.display='block';
+document.getElementById('status').innerText='⏳ جاري التوليد (5-10 ثواني)...';
+const img=document.getElementById('img');
+img.src=url;
+document.getElementById('genBtn').disabled=true;
+document.getElementById('genBtn').innerText='جاري...';
+img.onload=()=>{
+document.getElementById('status').innerText='✅ تم! مجاني 100%';
+document.getElementById('genBtn').disabled=false;
+document.getElementById('genBtn').innerText='توليد صورة 4K مجاناً 🎨';
+window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'});
+};
+}
+function downloadImg(){
+const img=document.getElementById('img');
+if(!img.src)return;
+window.open(img.src,'_blank');
+}
+</script>
+</body>
+</html>
