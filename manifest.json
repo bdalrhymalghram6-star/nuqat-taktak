@@ -1,0 +1,9 @@
+{
+  "name": "AURORA AI - مربوط بـ Meta AI",
+  "short_name": "AURORA AI",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#070b1f",
+  "theme_color": "#7c5cff",
+  "icons": [{"src": "logo.png","sizes": "512x512","type": "image/png"}]
+}
